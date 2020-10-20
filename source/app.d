@@ -35,12 +35,32 @@ class Dino
 
 	void draw()
 	{
+		curses.stdscr.clear();
+
+		draw_terrain();
+		draw_bush();
+		draw_dino();
+	}
+
+	void draw_terrain()
+	{
+
+	}
+
+	void draw_bush()
+	{
+
+	}
+
+	void draw_dino()
+	{
+
 	}
 
 	void refresh()
 	{
-		curses.stdscr.refresh;
-		curses.update;
+		curses.stdscr.refresh();
+		curses.update();
 	}
 }
 
