@@ -18,18 +18,16 @@ class Dino
 	{
 		while (true)
 		{
-			const key = curses.stdscr.getch();
+			draw();
+			refresh();
 
-			switch (key)
+			switch (curses.stdscr.getch())
 			{
 				case 'q':
 					return;
 				default:
 					break;
 			}
-
-			draw();
-			refresh();
 		}
 	}
 
