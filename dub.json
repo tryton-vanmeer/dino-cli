@@ -1,0 +1,12 @@
+{
+	"authors": [
+		"tryton-vanmeer"
+	],
+	"copyright": "Copyright © 2020, tryton-vanmeer",
+	"dependencies": {
+		"nice-curses": "~>0.2.5"
+	},
+	"description": "A dinosaur on the CLI.",
+	"license": "GPL-3.0",
+	"name": "dino-cli"
+}

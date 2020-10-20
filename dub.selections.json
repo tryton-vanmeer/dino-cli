@@ -1,0 +1,7 @@
+{
+	"fileVersion": 1,
+	"versions": {
+		"ncurses": "~master",
+		"nice-curses": "0.2.5"
+	}
+}
