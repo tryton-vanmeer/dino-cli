@@ -12,22 +12,29 @@ class Dino
 		};
 
 		curses = new Curses(cfg);
+		curses.stdscr.timeout(0);
 	}
 
 	void start()
 	{
 		while (true)
 		{
+			try
+			{
+				const key = curses.stdscr.getch();
+
+				switch (key)
+				{
+					case 'q':
+						return;
+					default:
+						break;
+				}
+			}
+			catch (NCException e) {}
+
 			draw();
 			refresh();
-
-			switch (curses.stdscr.getch())
-			{
-				case 'q':
-					return;
-				default:
-					break;
-			}
 		}
 	}
 
