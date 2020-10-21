@@ -83,7 +83,27 @@ class Dino
 
 	void draw_dino()
 	{
+		auto pos = Point(5, screen.height() - 12);
 
+		screen.addstr(  pos.y, pos.x, "         ▄███████▄", blue);
+		screen.addstr(++pos.y, pos.x, "         ██▄██████", blue);
+		screen.addstr(++pos.y, pos.x, "         █████████", blue);
+		screen.addstr(++pos.y, pos.x, "         ██████▄▄ ", blue);
+		screen.addstr(++pos.y, pos.x, "        ██████   ", blue);
+		screen.addstr(++pos.y, pos.x, " ▌     ███████▄▄▄", blue);
+		screen.addstr(++pos.y, pos.x, " ██▄  ████████  █", blue);
+		screen.addstr(++pos.y, pos.x, "  ████████████   ", blue);
+		screen.addstr(++pos.y, pos.x, "   █████████     ", blue);
+
+		if (jumping)
+		{
+			screen.addstr(++pos.y, pos.x, "   ██▄   ██▄", blue);
+		}
+		else
+		{
+			screen.addstr(++pos.y, pos.x, "    ██▄ ██  ", blue);
+			screen.addstr(++pos.y, pos.x, "         █▄▄  ", blue);
+		}
 	}
 
 	void refresh()
