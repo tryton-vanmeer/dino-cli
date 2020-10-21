@@ -23,6 +23,9 @@ struct Colors
 
 class Dino
 {
+	const int TIMER_RANGE = 4;
+
+	int timer;
 	bool jumping;
 
 	Curses curses;
@@ -36,6 +39,7 @@ class Dino
 
 	this()
 	{
+		int timer = 0;
 		jumping = false;
 
 		Curses.Config cfg = {
