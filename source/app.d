@@ -39,7 +39,7 @@ class Dino
 
 	this()
 	{
-		int timer = 0;
+		timer = 0;
 		jumping = false;
 
 		Curses.Config cfg = {
@@ -59,6 +59,8 @@ class Dino
 	{
 		while (true)
 		{
+			timer = (timer >= TIMER_RANGE ? 0 : timer + 1);
+
 			try
 			{
 				const key = screen.getch();
