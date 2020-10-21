@@ -1,3 +1,4 @@
+import std.random;
 import nice.curses;
 
 
@@ -101,7 +102,27 @@ class Dino
 
 	void draw_bush()
 	{
-		int bush
+		bush_pos -= 3;
+
+		if (bush_pos <= -5)
+		{
+			const rand = Random(timer);
+			bush_pos = screen.width() + (rand.front() % screen.width());
+		}
+
+		if (bush_pos <= (screen.width() -5))
+		{
+			const y = screen.height() - 1;
+
+			try
+			{
+				screen.addstr(y - 4, bush_pos, "▄█ █▄", colors.green);
+				screen.addstr(y - 3, bush_pos, "██ ██", colors.green);
+				screen.addstr(y - 2, bush_pos + 1, "███", colors.green);
+				screen.addstr(y - 1, bush_pos + 1, "███", colors.green);
+			}
+			catch (NCException e) {}
+		}
 	}
 
 	void draw_dino()
