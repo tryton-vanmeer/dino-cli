@@ -49,7 +49,10 @@ class Dino
 
 	void draw_terrain()
 	{
-
+		foreach (i; 0 .. curses.stdscr.width())
+		{
+			curses.stdscr.addstr(curses.stdscr.height - 1, i, "█");
+		}
 	}
 
 	void draw_bush()
