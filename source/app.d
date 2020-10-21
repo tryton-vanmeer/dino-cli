@@ -13,6 +13,8 @@ class Dino
 	const ulong green;
 	const ulong blue;
 
+	bool jumping;
+
 	Curses curses;
 	Window screen;
 
@@ -27,6 +29,8 @@ class Dino
 
 		screen = curses.stdscr;
 		screen.timeout(0);
+
+		jumping = false;
 
 		green = curses.colors[StdColor.green, StdColor.black];
 		blue = curses.colors[StdColor.blue, StdColor.black];
