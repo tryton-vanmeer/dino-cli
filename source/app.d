@@ -28,7 +28,7 @@ class Dino
 		curses = new Curses(cfg);
 
 		screen = curses.stdscr;
-		screen.timeout(0);
+		screen.timeout(60);
 
 		jumping = false;
 
@@ -110,7 +110,6 @@ class Dino
 	{
 		screen.refresh();
 		curses.update();
-		curses.nap(500);
 	}
 }
 
