@@ -8,15 +8,26 @@ struct Point
 }
 
 
+struct Colors
+{
+	ulong green;
+	ulong blue;
+
+	this(Curses curses)
+	{
+		this.green = curses.colors[StdColor.green, StdColor.black];
+		this.blue = curses.colors[StdColor.blue, StdColor.black];
+	}
+}
+
+
 class Dino
 {
-	const ulong green;
-	const ulong blue;
-
 	bool jumping;
 
 	Curses curses;
 	Window screen;
+	Colors colors;
 
 	~this()
 	{
@@ -25,6 +36,8 @@ class Dino
 
 	this()
 	{
+		jumping = false;
+
 		Curses.Config cfg = {
 			useColors: true,
 			cursLevel: 0,
@@ -35,10 +48,7 @@ class Dino
 		screen = curses.stdscr;
 		screen.timeout(60);
 
-		jumping = false;
-
-		green = curses.colors[StdColor.green, StdColor.black];
-		blue = curses.colors[StdColor.blue, StdColor.black];
+		colors = Colors(curses);
 	}
 
 	void start()
@@ -77,7 +87,7 @@ class Dino
 	{
 		foreach (i; 0 .. screen.width())
 		{
-			screen.addstr(screen.height - 1, i, "█", green);
+			screen.addstr(screen.height - 1, i, "█", colors.green);
 		}
 	}
 
@@ -90,24 +100,24 @@ class Dino
 	{
 		auto pos = Point(5, screen.height() - 12);
 
-		screen.addstr(  pos.y, pos.x, "         ▄███████▄", blue);
-		screen.addstr(++pos.y, pos.x, "         ██▄██████", blue);
-		screen.addstr(++pos.y, pos.x, "         █████████", blue);
-		screen.addstr(++pos.y, pos.x, "         ██████▄▄ ", blue);
-		screen.addstr(++pos.y, pos.x, "        ██████   ", blue);
-		screen.addstr(++pos.y, pos.x, " ▌     ███████▄▄▄", blue);
-		screen.addstr(++pos.y, pos.x, " ██▄  ████████  █", blue);
-		screen.addstr(++pos.y, pos.x, "  ████████████   ", blue);
-		screen.addstr(++pos.y, pos.x, "   █████████     ", blue);
+		screen.addstr(  pos.y, pos.x, "         ▄███████▄", colors.blue);
+		screen.addstr(++pos.y, pos.x, "         ██▄██████", colors.blue);
+		screen.addstr(++pos.y, pos.x, "         █████████", colors.blue);
+		screen.addstr(++pos.y, pos.x, "         ██████▄▄ ", colors.blue);
+		screen.addstr(++pos.y, pos.x, "        ██████   ", colors.blue);
+		screen.addstr(++pos.y, pos.x, " ▌     ███████▄▄▄", colors.blue);
+		screen.addstr(++pos.y, pos.x, " ██▄  ████████  █", colors.blue);
+		screen.addstr(++pos.y, pos.x, "  ████████████   ", colors.blue);
+		screen.addstr(++pos.y, pos.x, "   █████████     ", colors.blue);
 
 		if (jumping)
 		{
-			screen.addstr(++pos.y, pos.x, "   ██▄   ██▄", blue);
+			screen.addstr(++pos.y, pos.x, "   ██▄   ██▄", colors.blue);
 		}
 		else
 		{
-			screen.addstr(++pos.y, pos.x, "    ██▄ ██  ", blue);
-			screen.addstr(++pos.y, pos.x, "         █▄▄  ", blue);
+			screen.addstr(++pos.y, pos.x, "    ██▄ ██  ", colors.blue);
+			screen.addstr(++pos.y, pos.x, "         █▄▄  ", colors.blue);
 		}
 	}
 
