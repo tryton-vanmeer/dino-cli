@@ -26,6 +26,7 @@ class Dino
 	const int TIMER_RANGE = 4;
 
 	int timer;
+	int bush_pos;
 	bool jumping;
 
 	Curses curses;
@@ -40,6 +41,7 @@ class Dino
 	this()
 	{
 		timer = 0;
+		bush_pos = -10;
 		jumping = false;
 
 		Curses.Config cfg = {
@@ -99,7 +101,7 @@ class Dino
 
 	void draw_bush()
 	{
-
+		int bush
 	}
 
 	void draw_dino()
@@ -122,8 +124,16 @@ class Dino
 		}
 		else
 		{
-			screen.addstr(++pos.y, pos.x, "    ██▄ ██  ", colors.blue);
-			screen.addstr(++pos.y, pos.x, "         █▄▄  ", colors.blue);
+			if (timer < (TIMER_RANGE / 2))
+			{
+				screen.addstr(++pos.y, pos.x, "   ██    ██▄   ", colors.blue);
+				screen.addstr(++pos.y, pos.x, "   █▄▄      ", colors.blue);
+			}
+			else
+			{
+				screen.addstr(++pos.y, pos.x, "    ██▄ ██  ", colors.blue);
+				screen.addstr(++pos.y, pos.x, "         █▄▄  ", colors.blue);
+			}
 		}
 	}
 
