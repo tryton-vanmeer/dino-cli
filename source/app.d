@@ -5,6 +5,7 @@ class Dino
 {
 	const ulong green;
 	Curses curses;
+	Window screen;
 
 	this()
 	{
@@ -14,7 +15,9 @@ class Dino
 		};
 
 		curses = new Curses(cfg);
-		curses.stdscr.timeout(0);
+
+		screen = curses.stdscr;
+		screen.timeout(0);
 
 		green = curses.colors[StdColor.green, StdColor.black];
 	}
@@ -25,7 +28,7 @@ class Dino
 		{
 			try
 			{
-				const key = curses.stdscr.getch();
+				const key = screen.getch();
 
 				switch (key)
 				{
@@ -44,7 +47,7 @@ class Dino
 
 	void draw()
 	{
-		curses.stdscr.clear();
+		screen.clear();
 
 		draw_terrain();
 		draw_bush();
@@ -53,9 +56,9 @@ class Dino
 
 	void draw_terrain()
 	{
-		foreach (i; 0 .. curses.stdscr.width())
+		foreach (i; 0 .. screen.width())
 		{
-			curses.stdscr.addstr(curses.stdscr.height - 1, i, "█", green);
+			screen.addstr(screen.height - 1, i, "█", green);
 		}
 	}
 
@@ -71,7 +74,7 @@ class Dino
 
 	void refresh()
 	{
-		curses.stdscr.refresh();
+		screen.refresh();
 		curses.update();
 		curses.nap(500);
 	}
