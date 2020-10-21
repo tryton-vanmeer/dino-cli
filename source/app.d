@@ -11,6 +11,8 @@ struct Point
 class Dino
 {
 	const ulong green;
+	const ulong blue;
+
 	Curses curses;
 	Window screen;
 
@@ -27,6 +29,7 @@ class Dino
 		screen.timeout(0);
 
 		green = curses.colors[StdColor.green, StdColor.black];
+		blue = curses.colors[StdColor.blue, StdColor.black];
 	}
 
 	void start()
