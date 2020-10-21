@@ -66,6 +66,7 @@ class Dino
 	{
 		curses.stdscr.refresh();
 		curses.update();
+		curses.nap(500);
 	}
 }
 
