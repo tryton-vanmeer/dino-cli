@@ -1,6 +1,13 @@
 import nice.curses;
 
 
+struct Point
+{
+	int x;
+	int y;
+}
+
+
 class Dino
 {
 	const ulong green;
