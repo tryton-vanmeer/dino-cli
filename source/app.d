@@ -18,6 +18,11 @@ class Dino
 	Curses curses;
 	Window screen;
 
+	~this()
+	{
+		destroy(curses);
+	}
+
 	this()
 	{
 		Curses.Config cfg = {
@@ -118,4 +123,5 @@ void main()
 {
 	auto dino = new Dino;
 	dino.start();
+	destroy(dino);
 }
