@@ -3,16 +3,20 @@ import nice.curses;
 
 class Dino
 {
+	const ulong green;
 	Curses curses;
 
 	this()
 	{
 		Curses.Config cfg = {
+			useColors: true,
 			cursLevel: 0,
 		};
 
 		curses = new Curses(cfg);
 		curses.stdscr.timeout(0);
+
+		green = curses.colors[StdColor.green, StdColor.black];
 	}
 
 	void start()
@@ -51,7 +55,7 @@ class Dino
 	{
 		foreach (i; 0 .. curses.stdscr.width())
 		{
-			curses.stdscr.addstr(curses.stdscr.height - 1, i, "█");
+			curses.stdscr.addstr(curses.stdscr.height - 1, i, "█", green);
 		}
 	}
 
