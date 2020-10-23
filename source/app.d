@@ -75,11 +75,6 @@ class Dino
 
 			draw();
 			refresh();
-
-			if (bush_pos < 23 && bush_pos > 10 && !jumping)
-			{
-				jump();
-			}
 		}
 	}
 
@@ -172,6 +167,11 @@ class Dino
 				screen.addstr(++pos.y, pos.x, "    ██▄ ██  ", colors.dino);
 				screen.addstr(++pos.y, pos.x, "         █▄▄  ", colors.dino);
 			}
+		}
+
+		if (bush_pos < 23 && bush_pos > 10 && !jumping)
+		{
+			jump();
 		}
 	}
 
