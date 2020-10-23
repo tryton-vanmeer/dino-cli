@@ -1,10 +1,10 @@
 {
 	"name": "dino-cli",
 	"description": "A dinosaur on the CLI.",
-	"authors": ["tryton-vanmeer"],
+	"authors": ["Tryton Van Meer"],
 	"homepage": "https://github.com/tryton-vanmeer/dino-cli",
 	"license": "GPL-3.0",
-	"copyright": "Copyright © 2020, tryton-vanmeer",
+	"copyright": "Copyright © 2020, Tryton Van Meer",
 
 	"targetType": "executable",
 	"targetPath": "bin",
