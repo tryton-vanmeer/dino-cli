@@ -1,12 +1,29 @@
 {
-	"authors": [
-		"tryton-vanmeer"
-	],
+	"name": "dino-cli",
+	"description": "A dinosaur on the CLI.",
+	"authors": ["tryton-vanmeer"],
+	"homepage": "https://github.com/tryton-vanmeer/dino-cli",
+	"license": "GPL-3.0",
 	"copyright": "Copyright © 2020, tryton-vanmeer",
+
+	"targetType": "executable",
+	"targetPath": "bin",
+
+	"buildTypes": {
+		"release": {
+			"buildOptions": ["optimize", "inline"]
+		}
+	},
+
+	"configurations": [
+		{
+			"name": "default",
+			"targetName": "dino-cli",
+			"mainSourceFile": "src/main.d"
+		}
+	],
+
 	"dependencies": {
 		"nice-curses": "~>0.2.5"
-	},
-	"description": "A dinosaur on the CLI.",
-	"license": "GPL-3.0",
-	"name": "dino-cli"
+	}
 }
