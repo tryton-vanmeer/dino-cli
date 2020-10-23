@@ -9,19 +9,6 @@ struct Point
 }
 
 
-struct Colors
-{
-	ulong green;
-	ulong blue;
-
-	this(Curses curses)
-	{
-		this.green = curses.colors[StdColor.green, StdColor.black];
-		this.blue = curses.colors[StdColor.blue, StdColor.black];
-	}
-}
-
-
 class Dino
 {
 	const int TIMER_RANGE = 4;
