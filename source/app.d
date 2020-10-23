@@ -155,7 +155,7 @@ class Dino
 
 void main()
 {
-	auto dino = new Dino;
+	auto dino = new Dino();
 	dino.start();
 	destroy(dino);
 }
