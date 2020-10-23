@@ -24,6 +24,7 @@ class Dino
 	int timer = 0;
 	int bush_pos = -10;
 	bool jumping = false;
+	int jump_timer = 0;
 
 	ColorCfg colors;
 
@@ -75,6 +76,12 @@ class Dino
 			draw();
 			refresh();
 		}
+	}
+
+	void jump()
+	{
+		jumping = true;
+		jump_timer = cast(int) (TIMER_RANGE * 2.4);
 	}
 
 	void draw()
