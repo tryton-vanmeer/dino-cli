@@ -135,6 +135,17 @@ class Dino
 	{
 		auto pos = Point(5, screen.height() - 12);
 
+		if (jumping)
+		{
+			pos.y -= 4;
+			jump_timer--;
+
+			if (jump_timer <= 0)
+			{
+				jumping = false;
+			}
+		}
+
 		screen.addstr(  pos.y, pos.x, "         ▄███████▄", colors.dino);
 		screen.addstr(++pos.y, pos.x, "         ██▄██████", colors.dino);
 		screen.addstr(++pos.y, pos.x, "         █████████", colors.dino);
