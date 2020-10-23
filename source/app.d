@@ -26,13 +26,12 @@ class Dino
 {
 	const int TIMER_RANGE = 4;
 
-	int timer;
-	int bush_pos;
-	bool jumping;
+	int timer = 0;
+	int bush_pos = -10;
+	bool jumping = false;
 
 	Curses curses;
 	Window screen;
-	Colors colors;
 
 	~this()
 	{
@@ -41,10 +40,6 @@ class Dino
 
 	this()
 	{
-		timer = 0;
-		bush_pos = -10;
-		jumping = false;
-
 		Curses.Config cfg = {
 			useColors: true,
 			cursLevel: 0,
@@ -54,8 +49,6 @@ class Dino
 
 		screen = curses.stdscr;
 		screen.timeout(60);
-
-		colors = Colors(curses);
 	}
 
 	void start()
