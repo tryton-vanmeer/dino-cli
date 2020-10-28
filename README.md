@@ -1,11 +1,17 @@
 # Dino-CLI
 
-A dinosaur on the CLI.
+[![AUR Badge](https://img.shields.io/aur/version/dino-cli?style=for-the-badge)](https://aur.archlinux.org/packages/dino-cli/)
 
-![Screenshot](assets/screenshot.png)
+---
+
+A dinosaur on the CLI.
 
 Based on [Termosaur](https://github.com/b37t1td/termosaur), but written in D.
 This is only an animation, and not interactive like Termosaur.
+
+## Screenshot
+
+![Screenshot](assets/screenshot.png)
 
 ## Building
 
