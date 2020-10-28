@@ -2,6 +2,8 @@
 
 A dinosaur on the CLI.
 
+![Screenshot](assets/screenshot.png)
+
 ## Building
 
 ```
