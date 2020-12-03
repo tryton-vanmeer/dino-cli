@@ -11,7 +11,9 @@ This is only an animation, and not interactive like Termosaur.
 
 ## Screenshot
 
-![Screenshot](assets/screenshot.png)
+> Click image to view Asciinema recording.
+
+[![asciicast](assets/screenshot.png)](https://asciinema.org/a/oLH81fRGnb6EYVe07OmbJ4SqA)
 
 ## Building
 
